@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  touch-action: manipulation;
+}
+
+#video {
+  width: 100%;
+  display: none;
+}
+
+#code {
+  margin: auto;
+  width: min-content;
+}
+
+#code-label {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="qr-scanner.umd.min.js"></script>
+    <script src="qrcode.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-12">
+          <h1>Stock Management</h1>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12">
+          <h2>Add / Remove Stock</h2>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12">
+          <button
+            type="button"
+            class="btn btn-primary full-width"
+            onclick="handleClick()"
+          >
+            Scan QR Code
+          </button>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12">
+          <video id="video"></video>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <p class="bold">Product</p>
+          <p id="name">No product selected</p>
+        </div>
+        <div class="col-6">
+          <p class="bold">Quantity</p>
+          <p id="quantity">N/A</p>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <button
+            type="button"
+            class="btn btn-success full-width"
+            onclick="handlePlus()"
+          >
+            +
+          </button>
+        </div>
+        <div class="col-6">
+          <button
+            type="button"
+            class="btn btn-danger full-width"
+            onclick="handleMinus()"
+          >
+            -
+          </button>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12">
+          <h2>Generate Label</h2>
+        </div>
+      </div>
+      <form id="form">
+        <div class="row mb-2">
+          <div class="col-6">
+            <input
+              class="form-control-plaintext border rounded"
+              type="text"
+              name="name"
+              placeholder="Product Name"
+            />
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary full-width" type="submit">
+              Generate Label
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="row mb-2">
+        <div class="col-12">
+          <div id="code"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
